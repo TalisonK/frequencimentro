@@ -25,7 +25,9 @@ module main;
     
   end
   
-  always #10000 clk = ~clk;
+  always #9999 clk = ~clk;
+  
+  //always #10000 amostra = ~amostra; //200KHZ
   always #50000 amostra = ~amostra; //20KHZ
   //always #26316 amostra = ~amostra; //38KHZ
   //always #250000 amostra = ~amostra;//04KHZ

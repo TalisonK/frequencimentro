@@ -30,4 +30,7 @@ module registrador_modulo(armazena, limpar, display1, display2, display3, displa
       out4 = display4;
       out5 = display5;
   end
+  
+  
+  
 endmodule

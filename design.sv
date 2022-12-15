@@ -1,6 +1,8 @@
+
 `include "bcd.sv";
 `include "mux.sv";
 `include "registrador.sv";
+`include "decode.sv";
 
 module controlador(clk, amostra, seletor);
   
@@ -35,6 +37,14 @@ module controlador(clk, amostra, seletor);
   
   registrador_modulo(armazena, limpar, display1, display2, display3, display4, display5, reg_1, reg_2, reg_3, reg_4, reg_5);
   
+  logic [6:0] segd_freq;
+  logic [6:0] segd_5;
+  logic [6:0] segd_4;
+  logic [6:0] segd_3;
+  logic [6:0] segd_2;
+  logic [6:0] segd_1;
+  
+  decodificador(limpar, seletor, reg_5, reg_4, reg_3, reg_2, reg_1,segd_freq, segd_5, segd_4, segd_3, segd_2, segd_1 );
   
   always @(posedge clockControle) begin
     
